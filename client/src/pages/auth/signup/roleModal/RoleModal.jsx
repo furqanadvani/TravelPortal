@@ -4,10 +4,7 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { BsMicrosoftTeams } from 'react-icons/bs';
 import './RoleModal.css';
-import { useMsal } from '@azure/msal-react';
-// import { loginRequest } from '../../../../msalConfig';
 import { useDispatch, useSelector } from 'react-redux';
-import { microsoftSignup } from '../../../../store/actions/Auth.action';
 import CSelect from '../../../../uiComponents/cSelect/CSelect';
 
 const { Title } = Typography;
@@ -20,7 +17,6 @@ const validationSchema = Yup.object().shape({
 
 const RoleModal = ({ isOpen, setIsOpen }) => {
     const formRef = useRef(null);
-    const { instance } = useMsal();
     const dispatch = useDispatch();
 
     const { loading } = useSelector(({ auth }) => ({
