@@ -1,0 +1,6 @@
+const MANAGE_ROLES = {
+    ADD_EDIT_ROLE: 'ADD_EDIT_ROLE',
+    GET_ROLES: 'GET_ROLES'
+};
+
+export default MANAGE_ROLES;

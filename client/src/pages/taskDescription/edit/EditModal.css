@@ -1,0 +1,48 @@
+.edit-task-modal .task-modal-header {
+    margin-bottom: 20px;
+}
+
+.edit-task-modal .form-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.edit-task-modal .form-subtitle {
+    color: #8c8c8c;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+.edit-task-modal .task-modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.edit-task-modal .form-section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--them-primary, #1677ff);
+    margin: 20px 0 12px;
+}
+
+.edit-task-modal .form-section-label:first-child {
+    margin-top: 0;
+}
+
+.edit-task-modal .quill-editor {
+    background: #fff;
+}
+
+.edit-task-modal .error-message {
+    font-size: 12px;
+    color: #ff4d4f;
+}
+
+.edit-task-modal .task-modal-footer {
+    margin-top: 24px;
+}

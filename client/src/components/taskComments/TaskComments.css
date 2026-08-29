@@ -1,0 +1,286 @@
+.messagedata-main{
+    padding-block: 20px;
+}
+.taskComment-parent {
+    display: flex;
+    justify-content: center;
+    padding-block: 50px;
+    align-items: center;
+}
+
+.taskComment-container {
+    border: 2px solid #F7F7F7;
+    border-radius: 8px;
+    margin-inline: 34px;
+    width: 100%;
+    padding: 24px;
+}
+
+.taskComment-description {
+    margin-top: 30px;
+}
+
+.messagedata {
+    max-height: 420px;
+    overflow-y: auto;
+    padding-bottom: 12px;
+    padding-right: 6px;
+}
+
+.taskComments-profile {
+    margin-bottom: 0;
+}
+
+.taskComments-nameTime {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.taskComments-createdAt {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.taskComments-separator {
+    font-size: 20px;
+    line-height: 1;
+    color: #888;
+}
+
+.ant-list .ant-list-item .ant-list-item-meta .ant-list-item-meta-title {
+    margin-bottom: 0;
+}
+
+.taskComments-userName {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.taskComments-message {
+    color: var(--them-black);
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.ant-segmented {
+    border: 1px solid var(--them-stroke);
+    border-radius: 999px;
+    padding: 4px;
+    transition: all 0.3s ease;
+}
+
+.ant-segmented .ant-segmented-item-label {
+    padding: 6px 32px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.ant-segmented .ant-segmented-item-selected {
+    background-color: var(--them-primary);
+    color: var(--them-white);
+    border-radius: 999px;
+}
+
+.ant-segmented .ant-segmented-item:hover:not(.ant-segmented-item-selected):not(.ant-segmented-item-disabled)::after {
+    background: none !important;
+    background-color: none !important;
+}
+
+.ant-segmented .ant-segmented-item {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transform: translateZ(0);
+}
+
+/* ---------- Comment bubbles ---------- */
+
+.comment-row {
+    border: none !important;
+    padding: 6px 0 !important;
+}
+
+.comment-bubble-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.comment-bubble {
+    background: var(--them-white);
+    border: 1px solid var(--them-stroke);
+    border-radius: 14px;
+    padding: 10px 14px;
+    max-width: 78%;
+}
+
+.taskComment-avatar {
+    flex-shrink: 0;
+}
+
+.mention-tag {
+    color: var(--them-primary);
+    font-weight: 600;
+}
+
+/* Own messages align right and pick up the brand colour, like a chat app */
+.comment-row.own-comment .comment-bubble-wrapper {
+    flex-direction: row-reverse;
+}
+
+.comment-row.own-comment .comment-bubble {
+    background: var(--them-primary);
+    border-color: var(--them-primary);
+}
+
+.comment-row.own-comment .taskComments-userName,
+.comment-row.own-comment .taskComments-createdAt,
+.comment-row.own-comment .taskComments-message,
+.comment-row.own-comment .taskComments-separator {
+    color: var(--them-white);
+}
+
+.comment-row.own-comment .mention-tag {
+    color: var(--them-white);
+    text-decoration: underline;
+}
+
+.comment-row.own-comment .taskComments-profile {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* ---------- Composer ---------- */
+
+.comment-input {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.taskComment-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.char-counter {
+    font-size: 12px;
+    color: #999;
+}
+
+/* ---------- History tab (rendered inside this component) ---------- */
+
+.history-tab {
+    max-height: 420px;
+    overflow-y: auto;
+    padding: 28px 12px 12px 4px;
+}
+
+/* Give each step room to breathe instead of stacking flush against each other */
+.history-tab .ant-steps-item-container {
+    padding: 6px 8px 22px 6px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.history-tab .ant-steps-item:hover .ant-steps-item-container {
+    background-color: #fafafa;
+}
+
+.history-tab .ant-steps-item:last-child .ant-steps-item-container {
+    padding-bottom: 4px;
+}
+
+.history-tab .ant-steps-item-tail {
+    top: 6px !important;
+    padding: 34px 0 4px !important;
+}
+
+.history-tab .ant-steps-item-tail::after {
+    background-color: var(--them-stroke) !important;
+    width: 2px !important;
+}
+
+.history-tab .ant-steps-item-icon {
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    margin-inline-end: 14px;
+}
+
+.history-step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--them-white);
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.history-step-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.history-step-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.history-step-title strong {
+    font-size: 15px;
+    color: var(--them-black);
+}
+
+.history-step-date {
+    font-size: 12px;
+    color: #8c8c8c;
+    white-space: nowrap;
+}
+
+.history-step-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.history-step-description {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #595959;
+    margin-top: 4px;
+}
+
+.history-step-description .ant-avatar {
+    height: 22px;
+    width: 22px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+    .comment-bubble {
+        max-width: 90%;
+    }
+
+    .history-step-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

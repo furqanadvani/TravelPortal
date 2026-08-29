@@ -1,0 +1,126 @@
+.header-wrapper-main {
+    width: 100%;
+    background: var(--them-gradient);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    animation: headerFadeIn 0.25s ease-out;
+}
+
+.header-wrapper-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+}
+
+.header-wrapper-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-wrapper-left > .wrapper-heading > h4 {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--them-primary);
+    letter-spacing: 0.3px;
+    margin-bottom: 5px;
+    font-family: var(--instrument);
+}
+
+.header-wrapper-left > .wrapper-heading > h6 {
+    font-family: var(--instrument);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--them-text-gray);
+    margin-bottom: 0;
+}
+
+.back-button {
+    background-color: var(--them-white) !important;
+    color: var(--them-primary);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.back-button:focus-visible {
+    outline: 2px solid var(--them-primary);
+    outline-offset: 2px;
+}
+
+.header-wrapper-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-wrapper-right .ant-btn-primary {
+    transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.header-wrapper-right .ant-btn-primary:hover {
+    filter: brightness(1.08);
+}
+
+.header-wrapper-right .ant-btn-primary:active {
+    transform: scale(0.97);
+}
+
+.ant-popconfirm-buttons {
+    text-align: center !important;
+}
+
+@keyframes headerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-wrapper-main {
+        animation: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-wrapper-main {
+        padding: 20px;
+    }
+    .header-wrapper-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .header-wrapper-right {
+        width: 100%;
+    }
+    .header-wrapper-right .ant-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

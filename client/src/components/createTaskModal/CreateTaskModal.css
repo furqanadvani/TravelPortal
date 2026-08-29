@@ -1,0 +1,146 @@
+.form-section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 16px;
+    margin-top: 32px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--them-stroke);
+}
+
+.form-section-label:first-child {
+    margin-top: 0;
+}
+
+.form-section-label svg {
+    font-size: 13px;
+    color: var(--them-primary);
+}
+
+.create-task-modal .ant-modal-content {
+    padding: 0 !important;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+}
+
+.create-task-form {
+    display: flex;
+    flex-direction: column;
+    max-height: min(680px, 85vh);
+}
+
+.task-modal-header {
+    padding: 24px 28px 18px;
+    border-bottom: 1px solid var(--them-stroke);
+    flex-shrink: 0;
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--them-black);
+    font-family: var(--instrument);
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+}
+
+.form-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    font-family: var(--instrument);
+    margin-bottom: 0;
+}
+
+.task-modal-body {
+    padding: 24px 28px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 13px;
+    color: #374151;
+}
+
+.task-modal-footer {
+    padding: 16px 28px;
+    border-top: 1px solid var(--them-stroke);
+    background: var(--them-white);
+    flex-shrink: 0;
+}
+
+.submit-button {
+    height: 44px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--instrument);
+    transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.submit-button:hover {
+    filter: brightness(1.08);
+}
+
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+.quill-editor {
+    border: 1px solid var(--them-stroke);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quill-editor:focus-within {
+    border-color: var(--them-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.quill-editor .ql-toolbar.ql-snow {
+    border: none !important;
+    border-bottom: 1px solid var(--them-stroke) !important;
+    border-radius: 0;
+    background: #fafbfc;
+    padding: 10px 14px;
+}
+
+.quill-editor .ql-container.ql-snow {
+    border: none !important;
+    border-radius: 0;
+    font-family: var(--instrument);
+    font-size: 14px;
+}
+
+.quill-editor .ql-editor {
+    min-height: 90px;
+    padding: 12px 14px;
+}
+
+.quill-editor .ql-editor.ql-blank::before {
+    color: #CFCFCF;
+    font-style: normal;
+    font-family: var(--instrument);
+}
+
+.quill-editor .ql-editor img {
+    width: 70px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.ant-form-item-has-error .quill-editor {
+    border-color: #e63946;
+}
+
+.ant-form-item-has-error .quill-editor:focus-within {
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.12);
+}

@@ -1,0 +1,12 @@
+.offboarding-form .ql-toolbar.ql-snow {
+  border-radius: 16px 16px 0 0;
+  border: 1px solid var(--them-stroke);
+  margin-top: 8px;
+}
+
+.offboarding-form .ql-container.ql-snow {
+  border-radius: 0 0 16px 16px;
+  border-top: none;
+  height: 120px;
+  border: 1px solid var(--them-stroke) !important;
+}

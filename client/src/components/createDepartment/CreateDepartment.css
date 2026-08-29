@@ -1,0 +1,124 @@
+.create-team-modal .ant-modal-content {
+  border-radius: 20px;
+  /* padding: 32px !important; */
+  background: #fff;
+  border: none;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  margin-bottom: 24px;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--them-black);
+  font-family: var(--instrument);
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  font-family: var(--instrument);
+  margin-bottom: 0;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--them-black);
+}
+
+.form-textarea {
+  border-radius: 12px;
+  border: 1px solid var(--them-stroke) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 10px 14px;
+}
+
+.form-textarea:hover {
+  border-color: var(--them-primary) !important;
+}
+
+.form-textarea:focus {
+  border-color: var(--them-primary) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+.form-error {
+  font-size: 12px;
+  color: #e63946;
+  font-weight: 500;
+}
+
+.form-error-hidden {
+  visibility: hidden;
+}
+
+.form-char-count {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  padding-top: 16px;
+}
+
+.cancel-button {
+  height: 42px;
+  background: var(--them-white);
+  padding: 6px 20px;
+  border-radius: 56px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--them-primary);
+  font-family: var(--instrument);
+  border: 1px solid var(--them-stroke);
+  transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background: #f5f7ff !important;
+  color: var(--them-primary) !important;
+  border-color: var(--them-primary) !important;
+}
+
+.submit-button {
+  min-width: 160px;
+  height: 42px;
+  background: var(--them-primary);
+  padding: 6px 16px;
+  border-radius: 56px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--them-white);
+  font-family: var(--instrument);
+  transition: filter 0.2s ease, transform 0.15s ease;
+}
+
+.submit-button:hover {
+  filter: brightness(1.08);
+}
+
+.submit-button:active {
+  transform: scale(0.97);
+}

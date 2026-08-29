@@ -1,0 +1,19 @@
+.cinput-textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    resize: none;
+    border: 1px solid var(--them-stroke);
+    border-radius: 6px;
+}
+
+.cinput-textarea:focus {
+    outline: none;
+    border-color: var(--them-stroke);
+}
+
+.cinput-textarea::placeholder {
+    color: #CFCFCF;
+    font-weight: 400;
+    font-size: 1;
+}

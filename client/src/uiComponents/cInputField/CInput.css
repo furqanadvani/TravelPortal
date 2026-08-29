@@ -1,0 +1,82 @@
+.cinput-container {
+    margin-bottom: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cinput-field {
+    width: 100%;
+    padding: 6px 16px !important;
+    border: 1px solid var(--them-stroke) !important;
+    border-radius: 32px !important;
+    font-size: 14px;
+    height: 42px !important;
+    background: var(--them-white);
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cinput-field::placeholder {
+    color: #CFCFCF;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.cinput-field:focus {
+    outline: none;
+    border-color: var(--them-primary) !important;
+    box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.25);
+}
+
+.cinput-field:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.cinput-error-border {
+    border-color: #e63946 !important;
+}
+
+.cinput-error-border:focus {
+    box-shadow: 0px 0px 4px rgba(230, 57, 70, 0.25);
+}
+
+.form-error {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #e63946;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input {
+    padding-right: 40px;
+}
+
+.password-eye {
+    position: absolute;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #8c8c8c;
+    font-size: 16px;
+}
+
+.password-eye:hover {
+    color: #000;
+}
+
+.password-eye:focus-visible {
+    outline: 2px solid var(--them-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}

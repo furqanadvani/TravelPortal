@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  /* ---- Original brand tokens (kept as-is so nothing that already
+     references them anywhere in the app changes) ---- */
+  --them-primary: #0059F7;
+  --them-black: #000D1E;
+  --them-surface: #F4F8FF;
+  --them-stroke: #DEEAFF;
+  --them-white: #FFFFFF;
+  --them-text-gray: #777777;
+  --them-red: #F90505;
+  --them-green: #008000;
+  --them-progress-color: #FB8500;
+  --instrument: "Instrument Sans", sans-serif;
+
+  /* Playfair Display and Inter were already being downloaded via the
+     @import above but never actually used anywhere — putting them to work
+     instead of paying for a font load nobody sees. */
+  --them-heading-font: "Playfair Display", serif;
+  --them-body-font: "Inter", "Instrument Sans", sans-serif;
+
+  /* Fixed: this used to be `linear-gradient(to bottom, #F3F7FF 100%, #F3F7FF 100%)`
+     — two identical stops both pinned at 100%, which paints as a flat solid
+     colour, not a gradient. Restored as an actual soft wash from white into
+     the surface tone, matching what the two near-identical stops were
+     clearly going for. */
+  --them-gradient: linear-gradient(180deg, var(--them-white) 0%, var(--them-surface) 100%);
+
+  /* New, additive tokens — nothing existing references these yet, so adding
+     them can't break anything already built. They give the primary colour
+     more range (soft tint for backgrounds, a hover-darkened shade, a bold
+     diagonal gradient for hero/CTA moments) plus a small shadow/radius
+     scale so elevation is consistent instead of ad-hoc per component. */
+  --them-primary-hover: #0047C6;
+  --them-primary-soft: #E9F0FF;
+  --them-gradient-primary: linear-gradient(135deg, #0059F7 0%, #3D7FFF 55%, #6FA8FF 100%);
+  --them-shadow-sm: 0 1px 3px rgba(0, 13, 30, 0.06);
+  --them-shadow-md: 0 6px 20px rgba(0, 13, 30, 0.08);
+  --them-shadow-primary: 0 10px 24px rgba(0, 89, 247, 0.18);
+  --them-radius-sm: 8px;
+  --them-radius-md: 12px;
+  --them-radius-lg: 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+
+.flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+body {
+  font-family: var(--instrument), sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: var(--them-black);
+}
+
+/* Smoother, more premium feel on the interactive elements everywhere,
+   without changing what any of them do */
+a,
+button,
+.ant-btn {
+  transition: all 0.2s ease;
+}
+
+/* Subtle custom scrollbar so the app feels finished on the elements that
+   scroll (chat lists, modals, tables) instead of using the bare OS default */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--them-stroke);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--them-primary);
+}
+
+.body-container {
+  padding: 45px 70px;
+}
+
+.font-thin {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.margin-0 {
+  margin: 0 !important;
+}
+
+.padding-0 {
+  padding: 0 !important;
+}
+
+.margin-top_20 {
+  margin-top: 20px;
+}
+
+.margin-top_10 {
+  margin-top: 10px;
+}
+
+.user-avatar-custom {
+  font-weight: 600;
+  font-family: var(--instrument);
+  box-shadow: 0 0 0 2px var(--them-white), 0 1px 4px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.3px;
+  opacity: 0.92;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.bordered {
+  border: 1px solid var(--them-stroke);
+  border-radius: 16px;
+  padding: 10px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* .bordered:hover {
+  border-color: var(--them-primary);
+  box-shadow: var(--them-shadow-sm);
+} */
+
+.d-flex-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.align-item-center {
+  align-items: center;
+}
+
+.ant-table-title,
+.ant-table-cell,
+.ant-tabs-tab-icon,
+.ant-segmented-item-label,
+.ant-popconfirm-title,
+.ant-popconfirm-description {
+  font-family: var(--instrument);
+}
+
+.ant-popconfirm-description {
+  margin-top: 0;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+span {
+  font-family: var(--instrument);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-item-center {
+  align-items: center;
+}
+
+.comments-icon {
+  cursor: pointer;
+
+  p {
+    font-size: 12px;
+    color: var(--them-primary);
+  }
+
+  svg {
+    font-size: 18px;
+    color: var(--them-primary);
+  }
+}
+
+.ant-select-focused .ant-select-outlined.ant-select-status-error:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ant-select-outlined:not(.ant-select-customize-input) .ant-select-selector {
+  border: none !important;
+}
+
+.ant-select-focused.ant-select-outlined:not(.ant-select-disabled):not(.ant-select-customize-input):not(.ant-pagination-size-changer) .ant-select-selector {
+  box-shadow: none !important;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+.ant-tabs .ant-tabs-tab-btn {
+  font-family: var(--instrument);
+}
+
+.ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-form-item-label {
+  padding-bottom: 0px;
+}
+
+.text-gray {
+  color: #777777;
+  font-size: 14px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.table-view-container .ant-empty {
+  height: 400px !important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.approval-tag {
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  padding: 2px 6px;
+  box-shadow: var(--them-shadow-sm);
+}
+
+.title-priority {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.page-header-filters {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.ant-modal .ant-modal-content {
+  padding: 0px;
+  border-radius: var(--them-radius-md);
+  box-shadow: var(--them-shadow-md);
+}
+
+.form-wrapper {
+  padding: 24px !important;
+  border-radius: 24px;
+}
+
+.form-header {
+  margin-bottom: 32px;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--them-black);
+  font-family: var(--them-heading-font);
+  letter-spacing: 0.2px;
+  margin-bottom: 0px;
+}
+
+.status-filter {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 200px;
+
+  .ant-select .ant-select-selection-wrap {
+    border-radius: 16px;
+    padding: 0px 14px;
+  }
+}
+
+.reject-btn {
+  background: var(--them-white) !important;
+  color: var(--them-red) !important;
+  border: 1px solid #FFD5D5;
+  border-radius: 16px;
+  padding: 16px;
+  height: 36px;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.approve-btn {
+  background: var(--them-white);
+  color: var(--them-primary);
+  border: 1px solid var(--them-stroke);
+  border-radius: 16px;
+  padding: 16px;
+  height: 36px;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.activate-btn {
+  background: var(--them-white) !important;
+  color: var(--them-green) !important;
+  border: 1px solid #98cc98;
+  border-radius: 16px;
+  padding: 16px;
+  height: 36px;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.view-btn {
+  background: var(--them-white) !important;
+  color: var(--them-black) !important;
+  border: 1px solid var(--them-stroke);
+  border-radius: 16px;
+  padding: 16px;
+  height: 36px;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+}
+
+.activate-btn:hover {
+  border: 1px solid var(--them-green) !important;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.15) !important;
+  transform: translateY(-1px);
+}
+
+.reject-btn:hover {
+  border-color: var(--them-red) !important;
+  box-shadow: 0 4px 12px rgba(249, 5, 5, 0.12) !important;
+  transform: translateY(-1px);
+}
+
+.approve-btn:hover {
+  background-color: var(--them-white) !important;
+  color: var(--them-primary) !important;
+  border-color: var(--them-primary) !important;
+  box-shadow: var(--them-shadow-primary) !important;
+  transform: translateY(-1px);
+}
+
+.view-btn:hover {
+  color: var(--them-black) !important;
+  border-color: var(--them-stroke) !important;
+  box-shadow: var(--them-shadow-sm) !important;
+  transform: translateY(-1px);
+}
+
+.ant-image .ant-image-img {
+  width: 50px;
+  height: 50px;
+}

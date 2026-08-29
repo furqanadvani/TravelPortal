@@ -1,0 +1,9 @@
+.tasks-table-view-body {
+    width: 100%;
+}
+
+.board-view-more {
+    color: var(--them-stroke);
+    text-align: end;
+    margin-top: 20px;
+}

@@ -1,0 +1,209 @@
+.count-main {
+    width: 100%;
+}
+
+.count-cards {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.count-card-body {
+    min-width: 190px;
+    width: 100%;
+    min-height: 104px;
+    flex: 1;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border: 1px solid var(--them-stroke);
+    overflow: hidden;
+    position: relative;
+    background-color: var(--them-white);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-sizing: border-box;
+}
+
+.count-card-body.is-clickable {
+    cursor: pointer;
+}
+
+.count-card-body.is-disabled {
+    cursor: default;
+}
+
+.count-card-body.is-clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.count-card-body.is-clickable:focus-visible {
+    outline: 2px solid var(--them-primary);
+    outline-offset: 2px;
+}
+
+.count-card-blue {
+    background-color: var(--them-primary);
+}
+
+.count-card-blue.is-clickable:hover {
+    box-shadow: 0 6px 16px rgba(0, 89, 247, 0.25);
+}
+
+.count-card-blue .count-title > h4,
+.count-card-blue .count-stats > h3 {
+    color: var(--them-white);
+    font-family: var(--instrument);
+}
+
+.count-title > h4 {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--instrument);
+    color: var(--them-text-gray);
+}
+
+.count-stats > h3 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: var(--instrument);
+    color: var(--them-black);
+}
+
+.count-card-in-progress::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 15px;
+    border-radius: 8px;
+    background: #a18fff33;
+    filter: blur(16px);
+    z-index: 0;
+}
+
+.count-card-pending::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10px;
+    border-radius: 8px;
+    background: #7f921233;
+    filter: blur(16px);
+    z-index: 0;
+}
+
+.count-card-assigned::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10px;
+    border-radius: 8px;
+    background: #cb840a33;
+    filter: blur(16px);
+    z-index: 0;
+}
+
+.count-card-review::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10px;
+    border-radius: 8px;
+    background: #01b17033;
+    filter: blur(16px);
+    z-index: 0;
+}
+
+.count-card-closed::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 10px;
+    border-radius: 8px;
+    background: #b1010133;
+    filter: blur(16px);
+    z-index: 0;
+}
+
+/* Skeleton loading state */
+.count-card-skeleton {
+    cursor: default;
+}
+
+.skeleton-line {
+    background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+    background-size: 200% 100%;
+    border-radius: 6px;
+    animation: skeletonShimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-title {
+    height: 14px;
+    width: 60%;
+}
+
+.skeleton-number {
+    height: 24px;
+    width: 40%;
+}
+
+@keyframes skeletonShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skeleton-line {
+        animation: none;
+    }
+    .count-card-body.is-clickable:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .count-card-body {
+        min-width: 140px;
+    }
+}
+
+.count-card-skeleton {
+    cursor: default;
+}
+
+.skeleton-line {
+    background: linear-gradient(90deg, #eee 25%, #f5f5f5 50%, #eee 75%);
+    background-size: 200% 100%;
+    border-radius: 6px;
+    animation: skeletonShimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-title {
+    height: 16px;
+    width: 55%;
+}
+
+.skeleton-number {
+    height: 28px;
+    width: 35%;
+}

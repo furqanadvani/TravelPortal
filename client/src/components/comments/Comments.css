@@ -1,0 +1,121 @@
+.comments-list-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.comments-list-wrapper .ant-list-empty-text {
+    padding: 60px 0;
+}
+
+.comments-text {
+    border-top: 1px solid #f0f0f0;
+    padding: 12px 16px;
+    background: #fff;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.comments-text .ant-avatar {
+    height: 32px !important;
+    width: 32px !important;
+    flex-shrink: 0;
+}
+
+.comments-textarea {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ---------- Comment bubbles ---------- */
+
+.comment-row {
+    border: none !important;
+    padding: 6px 0 !important;
+}
+
+.comment-bubble-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.comment-bubble {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 14px;
+    padding: 10px 14px;
+    max-width: 82%;
+}
+
+.taskComment-avatar {
+    flex-shrink: 0;
+}
+
+.taskComments-profile {
+    margin-bottom: 0;
+}
+
+.taskComments-nameTime {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.taskComments-createdAt {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.taskComments-separator {
+    font-size: 20px;
+    line-height: 1;
+    color: #888;
+}
+
+.ant-list .ant-list-item .ant-list-item-meta .ant-list-item-meta-title {
+    margin-bottom: 0;
+}
+
+.taskComments-userName {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.taskComments-message {
+    color: var(--them-black);
+    font-size: 15px;
+    margin-bottom: 0;
+    word-break: break-word;
+}
+
+.comment-row.own-comment .comment-bubble-wrapper {
+    flex-direction: row-reverse;
+}
+
+.comment-row.own-comment .comment-bubble {
+    background: var(--them-primary);
+    border-color: var(--them-primary);
+}
+
+.comment-row.own-comment .taskComments-userName,
+.comment-row.own-comment .taskComments-createdAt,
+.comment-row.own-comment .taskComments-message,
+.comment-row.own-comment .taskComments-separator {
+    color: var(--them-white);
+}
+
+.comment-row.own-comment .taskComments-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@media (max-width: 420px) {
+    .comment-bubble {
+        max-width: 90%;
+    }
+}
